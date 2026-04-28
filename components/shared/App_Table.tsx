@@ -67,7 +67,7 @@ const App_Table = <TData, TValue>({
             table.getRowModel().rows.map((row) => (
               <TableRow key={row.id} className={cn("border-b", childRowStyle)}>
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="py-3">
+                  <TableCell key={cell.id} className="py-2 ">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}

@@ -13,7 +13,7 @@ import App_Sidebar_Item from "./App_Sidebar_Item";
 
 const App_Sidebar = () => {
   return (
-    <Sidebar collapsible="icon" className="w-48 bg-white">
+    <Sidebar collapsible="icon" className="w-64 bg-white">
       <SidebarTrigger />
       <SidebarHeader className="p-4 font-bold">Student Manager</SidebarHeader>
 

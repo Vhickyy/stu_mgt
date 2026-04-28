@@ -32,7 +32,7 @@ export const attendance_classes_column: ColumnDef<IAttendanceClasses>[] = [
   },
   {
     accessorKey: "present",
-    header: () => <div>Present</div>,
+    header: () => <div className="text-center">Present</div>,
     cell: ({ row }) => {
       const value = row.original.present;
       return (
@@ -46,7 +46,7 @@ export const attendance_classes_column: ColumnDef<IAttendanceClasses>[] = [
   },
   {
     accessorKey: "absent",
-    header: () => <div>Absent</div>,
+    header: () => <div className="text-center">Absent</div>,
     cell: ({ row }) => {
       const value = row.original.absent;
       return (
@@ -60,7 +60,7 @@ export const attendance_classes_column: ColumnDef<IAttendanceClasses>[] = [
   },
   {
     accessorKey: "total",
-    header: () => <div>Total</div>,
+    header: () => <div className="text-center">Total</div>,
     cell: ({ row }) => {
       const value = row.original.total;
       return (
