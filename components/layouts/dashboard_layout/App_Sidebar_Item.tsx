@@ -1,14 +1,23 @@
 import { SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar";
-import { Home } from "lucide-react";
+import { Home, LucideIcon } from "lucide-react";
+import Link from "next/link";
 
-const App_Sidebar_Item = () => {
+const App_Sidebar_Item = ({
+  name,
+  link,
+  icon: Icon,
+}: {
+  name: string;
+  link: string;
+  icon: LucideIcon;
+}) => {
   return (
     <SidebarMenuItem>
       <SidebarMenuButton asChild>
-        <a href="/dashboard">
-          <Home className="mr-2" />
-          Dashboard
-        </a>
+        <Link href={link}>
+          <Icon size={18} />
+          {name}
+        </Link>
       </SidebarMenuButton>
     </SidebarMenuItem>
   );
