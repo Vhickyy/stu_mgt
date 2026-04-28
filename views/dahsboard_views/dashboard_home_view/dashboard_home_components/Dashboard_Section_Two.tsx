@@ -10,7 +10,7 @@ const Dashboard_Section_Two = () => {
         <Dashboard_Results />
       </div>
       <div className="flex-1 flex flex-col gap-8 ">
-        <div className="flex-1 p-4 border bg-primary/30 rounded-lg"></div>
+        <div className="flex-1 p-4 border bg-white rounded-lg"></div>
         <Dashboard_Recent_Result_And_Quick />
       </div>
     </section>

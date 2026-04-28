@@ -46,7 +46,7 @@ const App_Table = <TData, TValue>({
                 <TableHead
                   key={header.id}
                   className={cn(
-                    "p-0",
+                    "",
                     index === 0 && "rounded-l-lg",
                     index === headerGroup.headers.length - 1 && "rounded-r-lg",
                   )}

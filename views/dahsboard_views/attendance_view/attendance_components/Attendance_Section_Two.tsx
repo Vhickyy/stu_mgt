@@ -15,7 +15,7 @@ const Attendance_Section_Two = () => {
           containerStyle="justify-between flex-row-reverse items-center border-b pb-4"
           text={{
             header: {
-              text: "Attendance by classes",
+              text: "Attendance by course",
               type: "dashSub",
             },
           }}

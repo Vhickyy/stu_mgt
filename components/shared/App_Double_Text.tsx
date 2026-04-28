@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 const App_Double_Text = ({ para, header, textContentStyle }: IDoubleText) => {
   return (
-    <aside className={cn("flex flex-col gap-2", textContentStyle)}>
+    <aside className={cn("flex flex-col gap-y-2", textContentStyle)}>
       {header && <App_Text {...header} />}
       {para && <App_Text {...para} />}
     </aside>

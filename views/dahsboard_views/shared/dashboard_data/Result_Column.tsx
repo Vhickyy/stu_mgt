@@ -6,23 +6,19 @@ import { IResult } from "../dashboard_types";
 export const result_col: ColumnDef<IResult>[] = [
   {
     accessorKey: "course",
-    header: () => (
-      <div className="px-3 py-2  rounded-l-lg bg-red-400">Courses</div>
-    ),
+    header: () => <div>Courses</div>,
   },
   {
     accessorKey: "unit",
-    header: () => <div className="px-3 py-2">Unit</div>,
+    header: () => <div>Unit</div>,
   },
   {
     accessorKey: "grades",
-    header: () => <div className="px-3 py-2">Grades</div>,
+    header: () => <div>Grades</div>,
   },
   {
     accessorKey: "points",
-    header: () => (
-      <div className="px-3 py-2  rounded-r-lg bg-red-800">Points</div>
-    ),
+    header: () => <div>Points</div>,
   },
 ];
 

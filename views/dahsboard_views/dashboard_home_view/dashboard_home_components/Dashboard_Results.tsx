@@ -8,7 +8,7 @@ import {
 
 const Dashboard_Results = () => {
   return (
-    <aside className="p-4 pb-0 border bg-primary/30 rounded-lg">
+    <aside className="p-4 pb-0 border bg-white rounded-lg">
       <App_Full_Text
         containerStyle="justify-between flex-row-reverse items-center"
         text={{

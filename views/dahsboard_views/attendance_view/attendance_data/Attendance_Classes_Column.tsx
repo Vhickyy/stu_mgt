@@ -3,18 +3,28 @@
 import App_Full_Text from "@/components/shared/App_Full_Text";
 import { ColumnDef } from "@tanstack/react-table";
 import { IAttendanceClasses } from "../attendance_types/Attendance_Classes_Types";
+import App_Text from "@/components/app_ui/App_Text";
 
 export const attendance_classes_column: ColumnDef<IAttendanceClasses>[] = [
   {
     accessorKey: "course",
-    header: () => <div className="px-3 py-2 rounded-l-lg ">Courses</div>,
+    header: () => <div>Courses</div>,
     cell: ({ row }) => {
       const course = row.original.course;
       return (
         <App_Full_Text
           text={{
-            header: { text: course.code, type: "dashText" },
-            para: { text: course.title, type: "dashText" },
+            textContentStyle: "gap-y-0",
+            header: {
+              text: course.code,
+              type: "dashText",
+              style: "text-xs font-semibold",
+            },
+            para: {
+              text: course.title,
+              type: "dashText",
+              style: "text-xs",
+            },
           }}
         />
       );
@@ -22,27 +32,64 @@ export const attendance_classes_column: ColumnDef<IAttendanceClasses>[] = [
   },
   {
     accessorKey: "present",
-    header: () => <div className="px-3 py-2">Present</div>,
+    header: () => <div>Present</div>,
+    cell: ({ row }) => {
+      const value = row.original.present;
+      return (
+        <App_Text
+          type="dashText"
+          text={`${value}`}
+          style="font-semibold text-center text-green-500 text-xs"
+        />
+      );
+    },
   },
   {
     accessorKey: "absent",
-    header: () => <div className="px-3 py-2">Absent</div>,
+    header: () => <div>Absent</div>,
+    cell: ({ row }) => {
+      const value = row.original.absent;
+      return (
+        <App_Text
+          type="dashText"
+          text={`${value}`}
+          style="font-semibold text-center text-red-500 text-xs"
+        />
+      );
+    },
   },
   {
     accessorKey: "total",
-    header: () => <div className="px-3 py-2">Total</div>,
+    header: () => <div>Total</div>,
+    cell: ({ row }) => {
+      const value = row.original.total;
+      return (
+        <App_Text
+          type="dashText"
+          text={`${value}`}
+          style="font-semibold text-center  text-xs"
+        />
+      );
+    },
   },
   {
     accessorKey: "attendance",
-    header: () => <div className="px-3 py-2 rounded-r-lg">Attendance</div>,
+    header: () => <div>Attendance</div>,
     cell: ({ row }) => {
       const value = row.original.attendance;
       return (
-        <div className="h-2 w-full border rounded-xl relative">
-          <div
-            className="absolute bg-primary h-full rounded-xl"
-            style={{ width: `${value}%` }}
+        <div className="w-full flex flex-col">
+          <App_Text
+            type="dashText"
+            text={`${value}%`}
+            style="font-semibold text-xs"
           />
+          <div className="h-2 w-full border rounded-xl relative">
+            <div
+              className={`absolute h-full rounded-xl ${value < 20 ? "bg-red-500" : value < 50 ? "bg-amber-500" : "bg-green-600"}`}
+              style={{ width: `${value}%` }}
+            />
+          </div>
         </div>
       );
     },
@@ -52,42 +99,62 @@ export const attendance_classes_column: ColumnDef<IAttendanceClasses>[] = [
 export const attendance_classes_data = [
   {
     course: {
-      code: "CHM 121",
-      title: "Polymer",
+      code: "CSC 401",
+      title: "Operating Systems",
     },
-    present: 3,
-    absent: 12,
-    total: 12,
-    attendance: 40,
+    present: 18,
+    absent: 2,
+    total: 20,
+    attendance: 90,
   },
   {
     course: {
-      code: "CHM 121",
-      title: "Polymer",
+      code: "MTH 403",
+      title: "Numerical Analysis",
     },
-    present: 3,
-    absent: 12,
-    total: 12,
-    attendance: 40,
+    present: 14,
+    absent: 6,
+    total: 20,
+    attendance: 70,
   },
   {
     course: {
-      code: "CHM 121",
-      title: "Polymer",
+      code: "GST 301",
+      title: "Entrepreneurship Studies",
     },
-    present: 3,
-    absent: 12,
-    total: 12,
-    attendance: 40,
+    present: 10,
+    absent: 5,
+    total: 15,
+    attendance: 67,
   },
   {
     course: {
-      code: "CHM 121",
-      title: "Polymer",
+      code: "PHY 405",
+      title: "Electromagnetism",
     },
-    present: 3,
-    absent: 12,
-    total: 12,
-    attendance: 40,
+    present: 16,
+    absent: 4,
+    total: 20,
+    attendance: 80,
+  },
+  {
+    course: {
+      code: "CHM 421",
+      title: "Industrial Chemistry",
+    },
+    present: 9,
+    absent: 6,
+    total: 15,
+    attendance: 60,
+  },
+  {
+    course: {
+      code: "CSC 404",
+      title: "Software Engineering",
+    },
+    present: 19,
+    absent: 1,
+    total: 20,
+    attendance: 95,
   },
 ];
