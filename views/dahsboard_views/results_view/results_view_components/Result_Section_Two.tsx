@@ -1,6 +1,5 @@
 import App_Table from "@/components/shared/App_Table";
 import { results_col, results_data } from "../results_data/Result_Data_Column";
-import App_Full_Text from "@/components/shared/App_Full_Text";
 import App_Text from "@/components/app_ui/App_Text";
 import { gradeScale } from "../results_data/Result_Data";
 
