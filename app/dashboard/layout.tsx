@@ -1,6 +1,6 @@
 import Dashboard_Layout from "@/components/layouts/dashboard_layout/Dashboard_Layout";
 
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
