@@ -15,6 +15,10 @@ const Profile_Layout = ({ children }: { children: ReactNode }) => {
       name: "Preference",
       link: "/dashboard/profile/preference",
     },
+    {
+      name: "Account Settings",
+      link: "/dashboard/profile/account-settings",
+    },
   ];
   const pathname = usePathname();
   return (
