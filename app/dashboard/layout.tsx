@@ -1,4 +1,4 @@
-import Dashboard_Layout from "@/components/layouts/dashboard_layout/Dashboard_Layout";
+import Dashboard_Layout from "@/app/_components/layouts/dashboard_layout/Dashboard_Layout";
 
 export default function DashboardLayout({
   children,
